@@ -1,0 +1,64 @@
+# dsa
+#include<iostream>
+using namespace std;
+int sum(int a,int b){
+
+int c = a+b;
+return c;
+}//first we made sum function and take c in return we declare two parameters in sum and be then call them by num1 and num2
+//int a and inrt b will replace by num1 and num2
+int main ()
+{
+int num1,num2;
+
+cout<<"enter first number"<<endl;
+cin>>num1;
+
+cout<<"enter second  number"<<endl;
+cin>>num2;
+ cout<<num1<< "+" <<num2<< "="<< sum(num1,num2);
+
+
+
+
+}
+
+
+
+
+//functions // another example
+#include<iostream>
+using namespace std;
+int add (int num1,int num2){
+                 
+int sum=num1+num2;   //here we  declare our function along with data type and then we will call it by just passing variables
+
+}
+int main(){
+
+
+    int a=2;
+    int b=3;
+    cout<<"the sum is "<<add(a,b)<<endl;
+    return 0;
+}
+
+
+
+
+// another example 
+
+
+#include<iostream>
+using namespace std;
+void display(void);// first declare the function by return type and parameters 
+
+int main(){
+display(); //call that defined function in main function 
+return 0;
+}
+void display(void)
+{
+
+    cout<<"shelu is great";
+}//then difine that function now whenever you will call that function it will return what u have define under it .
