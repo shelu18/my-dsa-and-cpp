@@ -13,7 +13,8 @@ int main()
     cout<<"enter the value of n";
     cin>>n;
     
-    for(i=n; i>=1; i--){
+    for(i=n; i>=1; i--){//we nitialise i==1 beacaue we want to print the number in reverse order tilll 1 and i should start from the number entred by the user 
+    
         
   
      cout<<i<<"\n";
