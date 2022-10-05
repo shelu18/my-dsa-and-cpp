@@ -1,0 +1,21 @@
+#include<iostream>
+using namespace std;
+
+
+void printcounting(int n){
+
+
+ for(int i=1; i<=n; i++){
+    
+    
+    cout<<i<<endl;
+}
+}
+int main (){
+    int m; 
+  cout <<"enter the value of n";
+  cin>>m;
+    
+    printcounting(m);
+    
+}
