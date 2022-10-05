@@ -62,3 +62,36 @@ void display(void)
 
     cout<<"shelu is great";
 }//then difine that function now whenever you will call that function it will return what u have define under it .
+
+
+
+
+#include<iostream>
+using namespace std;
+int add (int num1,int num2){
+                 
+int sum =num1+num2;
+
+return sum;
+       }                           //here we  declare our function along with data type and then we will call it by just passing variables
+ int mul(int num1,int num2){
+ int product= num1*num2;
+  return product;
+  
+  }
+int main(){
+
+
+    int a,b;
+    
+    cout<<"enter the value of a and b"<<endl;
+    
+    cin>>a>>b;
+        cout<<"the sum is "<<add(a,b)<<endl;
+    
+
+   cout<<"the product is  "<<mul(a,b)<<endl;
+      
+       return 0;
+}
+
