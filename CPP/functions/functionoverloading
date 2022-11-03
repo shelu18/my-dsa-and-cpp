@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std; //function overloading
+
+int add (int a,int b)//1
+{
+	return (a+b);
+	cout<<" function 1"<<endl;
+}
+double add (double a, double b)//2
+{
+	return (a+b);
+}
+int add(int a, int b, int c)//3
+{
+	return (a+b+c);
+}
+double add (int a, double b)//4
+{
+	return (a+b);
+	
+}
+double add (double a , int b )//5
+{
+	return (a+b);
+	
+}
+int main (){
+	int a,b;
+	cout<<"enter the value of a and b";
+	cin >>a>>b;
+	
+	cout<<add(a,b)<<endl;
+	cout <<add(3.45,4.54)<<endl;
+	cout<< add(3,4,5)<<endl;
+	cout<<add (3,4.5)<<endl;
+	cout<<add(4.5,3)<<endl;
+	return 0;
+}
+	
