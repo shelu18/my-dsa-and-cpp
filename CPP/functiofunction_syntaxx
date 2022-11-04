@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std ;
+int add(int a,int b){
+    
+    
+ int  c = a+b;
+ return c;
+} 
+ 
+ int mult(int a, int b){
+     int d =a*b;
+     return d;
+ }
+
+int main (){
+    
+    //ye hota he function simply uper wale block me define kar so and then fir call kar do 
+    
+    
+    int a, b;
+    cin  >>a>>b;
+    cout<<"sum is "<<add(a,b)<<endl;
+    cout<<"multiplication is "<<mult(a,b);
+}
