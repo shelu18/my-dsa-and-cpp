@@ -1,0 +1,11 @@
+//nasted loop
+#include<iostream>
+using namespace std;
+int main(){
+    for(int t=0;t<5;t++) {     //rows
+                            //ye wala loop ye declare kar rha he ki niche wala loop kitni baar chalega 
+    for(int i=1;i<=5;i++)     // ye wala loop normally 1 to 5 print karega
+        cout<<i<<"\t";
+        cout<<endl;
+    }
+ }
