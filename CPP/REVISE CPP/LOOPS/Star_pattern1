@@ -1,0 +1,10 @@
+//star pattern 
+#include<iostream>
+using namespace std;
+int main(){
+    for(int k=0;k<7;k++){ //ye to bas ye define kar rha he ki niche wala loop kitni baar chalega 
+    for(int i=0;i<k;i++)   //or is loop me hum upar wale se reference leke uske acc logic likh rhe he 
+        cout<<"*"<<" ";
+        cout<<endl;
+    }
+}
