@@ -1,0 +1,11 @@
+//nasted loop
+#include<iostream>
+using namespace std;
+int main(){
+    for(int t=0;t<5;t++) {     
+                            
+    for(int i=1;i<=t;i++)     //jab t ki value initially 1 rahegi as of t i will increament along with t
+        cout<<i<<"\t";
+        cout<<endl;
+    }
+ }
