@@ -1,0 +1,13 @@
+//type casting 
+#include<iostream>
+using namespace std;
+int main(){
+//   float num = 5.556;  
+  
+// int x = (int)num;
+// cout<<x;
+// }
+  int num=4;
+  float y=(float)num;
+  cout<<y;
+}
