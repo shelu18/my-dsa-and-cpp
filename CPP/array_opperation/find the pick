@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstdlib> // for std::exit
+
+using namespace std;
+
+int largest(int arr[], int n) {
+    for (int i = 0; i < n ; i++) {
+        if (arr[i] > arr[i + 1] && arr[i] > arr[i - 1]) {
+            return arr[i];
+        }
+    }
+    cout << "No element exists like that" << endl;
+    exit(0); // Terminate the program if no such element is found
+}
+
+int main() {
+    cout << "Enter the size of the array: ";
+    int n;
+    cin >> n;
+    int arr[n];
+    cout << "Enter " << n << " values: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    cout << "The element larger than its neighbours is: " << largest(arr, n) << endl;
+    return 0;
+}
