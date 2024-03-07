@@ -1,0 +1,15 @@
+#include<iostream>
+
+using namespace std;
+int main() {
+  int ar[5] = {1,2,3,4,5};
+  int prefix[5];
+  prefix[0] = ar[0]; //initializing first element
+  for (int i = 0; i < =5; i++) {
+    prefix[i] = prefix[i - 1] + ar[i];
+  }
+  for (int i = 0; i < 5; i++) {
+    cout << prefix[i] << " "; //printing the array
+  }
+  return 0;
+}
