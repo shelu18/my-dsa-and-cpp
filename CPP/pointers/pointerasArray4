@@ -1,0 +1,8 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int arr[4]={1,2,3,4};
+    int (*ptr)[4]= &arr; //pointer to an array of 4 integers
+    cout<<ptr<<" "<<*ptr<<endl;  //it will return the address of array and value at 0th index of array as ptr is holding the address so while derefrencing it will return the address
+  cout<<arr<<" "<<*arr<<endl;  //it will return the address of array and value at 0th index of array`
+    return 0;                   //if we have address and indexing of araray then we can all the properties of array to implement the operations 
