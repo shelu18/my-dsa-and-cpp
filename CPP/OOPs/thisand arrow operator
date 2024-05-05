@@ -1,0 +1,31 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class player {
+    private:
+    int health;
+    string name;
+
+    public:
+    void setter(int health){
+        this->health = health; //this is a pointer which points to the current object of the class ..first wala health is the private member of the class and second wala health is the health which is passed as an argument to the setter function{lolcal variable}
+    }
+
+    void setter(string name){
+        this->name = name;
+    }
+
+    void getter(){
+        cout<<"health is " <<health<<endl;
+        cout<<"name is "<<name<<endl;
+    }
+};
+
+int main (){
+    player shelu;
+    shelu.setter(100);
+    shelu.setter("Shelu");
+    shelu.getter();
+    return 0;
+}
