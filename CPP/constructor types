@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+
+class Bike {
+    private:
+    int speed;
+    string model;
+
+    public:
+    // Default constructor
+    Bike() : speed(0), model("Unknown") {}
+
+    // Parameterized constructor
+    Bike(int s, string m) : speed(s), model(m) {}
+
+    // Copy constructor
+    Bike(const Bike &b) : speed(b.speed), model(b.model) {}
+
+    void setSpeed(int s) {
+        speed = s;
+    }
+
+    int getSpeed() const {
+        return speed;
+    }
+
+    void setModel(string m) {
+        model = m;
+    }
+
+    string getModel() const {
+        return model;
+    }
+};
+
+int main() {
+    Bike bike1(10, "Mountain Bike"); // Initialize bike1 with speed 10 and model "Mountain Bike"
+    Bike bike2 = bike1; // Use copy constructor to create bike2 from bike1
+
+    cout << "Bike1 speed: " << bike1.getSpeed() << ", model: " << bike1.getModel() << endl;
+    cout << "Bike2 speed: " << bike2.getSpeed() << ", model: " << bike2.getModel() << endl;
+
+    return 0;
+}
