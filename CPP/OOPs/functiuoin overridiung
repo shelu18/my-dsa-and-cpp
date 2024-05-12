@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std;
+class A{
+    public:
+    void show(){
+        cout<<"me a class ka show function hu"<<endl;
+    }
+};
+class B: public A{
+    public :  //matlab derived class ke paas already uper wale show function ka access he agar me direct main function me print karwa du to vo hi print hoga 
+              //but me derived class me us function ka access hone ke baad bhi uski defination ko change kar rha hu matlab override kar rha hu
+    void show(){
+        cout<<"me b class ka show function hu"<<endl;
+    }
+};
+int main(){
+    B b;
+    b.show();  
+}
