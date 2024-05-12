@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class A {
+    public:
+    int a ;
+    int b;
+    int c;
+
+};
+class B {
+    public:
+    int d;
+    int e;
+    int f;
+};
+ class c :public A,protected B{
+     public:
+     int g;
+    
+ };
+ int main(){
+    c obj;
+    obj.a = 5;
+    // obj.d = 6; // yaha per nahi kar paaooge lala kiuki b class protected inherit kiya he or protected me access nahi kar sakte publically
+    cout<<obj.a<<endl;
+    // cout<<obj.d<<endl;
+ }
