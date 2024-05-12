@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+//diamond problem is a problem that is faced by the multiple inheritance
+//it occurs when two classes are inherited from a single base class and another class is inherited from these two classes
+
+class A{
+    public:
+    int a_ka_public;
+
+};
+class B :  virtual public A{
+    public:
+    int b_ka_public;
+};
+
+class c : virtual  public A{
+    public:
+    int c_ka_public;
+};
+class D:public c,public B{
+    public:
+    int d_ka_public;
+};
+int main (){
+    D d;
+    d.a_ka_public = 5;
+    cout<<d.a_ka_public<<endl;   // this probelem can be solve by suing virtual keyword that allows to create a single copy of the base class
+};
