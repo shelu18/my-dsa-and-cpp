@@ -1,0 +1,40 @@
+#include<iostream>
+using  namespace std; 
+class A{
+public :
+int a_ka_public;
+private:
+int a_ka_private;
+protected:
+int a_ka_protected;
+};
+
+class B:public A{
+public:
+int b_ka_public;
+  private:
+int b_ka_private;
+protected:
+int b_ka_protected;
+};
+class c :protected  B{   // iskam matlab ki jo a b class ka b_ka_public tha v0 ab c me protected ho gaya he or ab aap use uske derived class me access nahi kar sakte
+    public:
+    int c_ka_public;
+    private:
+    int c_ka_private;
+    protected:
+    int c_ka_protected;
+};
+class D:public c{
+    public:
+};
+int main(){
+    B b;
+    b.a_ka_public=5;
+    cout<<b.a_ka_public<<endl;
+        // b.a_ka private=5;  //ye nahi access kar sakte he kiuki ye a ka private he or b me publically inherite nahi ho sakta hai 
+       // ye he concept access specifiers ka 
+      D d;
+        d.a_ka_public=5;
+        cout<<d.a_ka_public<<endl;    // ye nahi access kar sakte he kiuki ye a ka private he or b me publically inherite nahi ho sakta hai
+}
