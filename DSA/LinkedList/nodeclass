@@ -1,0 +1,30 @@
+//linkedlist advantages
+//1. Dynamic size
+//2. Easy insertion and deletion
+//3. Random access is not allowed
+//4. Extra memory is used for pointers
+//5. No wastage of memory
+//6. No need to give size at the time of declaration
+#include<iostream>
+using namespace std;
+class Node {
+    public:
+    int val;
+    Node* next;
+
+Node(int val ){   // yaha per constructor me bas value initialise karne ke liye kiya hai or ye by default next == null bhi kar dega ..because we don't want garbage value initially in the address of next
+    this->val=val;
+    next=NULL;
+}
+};
+int main(){
+    Node a(10);
+    Node b(20);
+    Node c(30);
+    Node d(40);
+    a.next=&b;
+    b.next=&c;
+    c.next=&d;
+    d.next=NULL;
+    cout<<a.val<<" "<<a.next->val<<" "<<a.next->next->val<<" "<<a.next->next->next->val<<endl;
+}
