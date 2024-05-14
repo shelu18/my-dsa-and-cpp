@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int val;
+    Node* next;                    // pointer of the class Node
+    Node(int v){
+    this->val=val;
+    this->next=NULL;
+        
+    }
+};
+
+    //display function 
+    void display(Node*head){  // head is the pointer which holds the address of the first node
+        Node* temp=head;  //temp is a pointer which holds the address of the first node
+        while(temp!=NULL){  //jab tak temp ka address null nahi hota tab tak loop chalega
+            cout<<temp->val<<" ";  //print the value of the node
+            temp=temp->next;  //move to the next node
+        }
+
+    }
+
+    int main(){
+        //pointer 
+
+                     //normal initailsation be like 
+                       // Node a(10);
+
+        Node* a= new Node(10);   // a bsically is a pointer which holds the address of the object of the class Node
+        Node* b= new Node(20);
+        Node* c= new Node(30);
+        Node* d= new Node(40);
+        a->next=b;         //norlam be like a.next= &b         // b in the next of a and it is address
+        b->next=c;
+        c->next=d;
+        d->next=NULL;
+        cout<<a->val<<" "<<a->next->val<<" "<<b->next->val<<" "<<c->next->val<<endl;
+        display(a);  //display function is called
+return 0;
+     
+    }
+
+
+
+
