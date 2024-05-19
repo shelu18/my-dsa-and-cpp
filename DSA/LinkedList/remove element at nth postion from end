@@ -1,0 +1,59 @@
+#include<iostream>
+using namespace std;
+
+class Node {
+public:
+    int val;
+    Node* next;
+    Node(int val) {
+        this->val = val;
+        this->next = NULL;
+    }
+};
+void display(Node* head) {
+    Node* temp = head;
+    while(temp != NULL) {
+        cout << temp->val << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
+void removeNthFromEnd(Node*& head, int n) {
+    Node* temp = head;
+    int length = 0;
+    while(temp != NULL) {
+        length++;
+        temp = temp->next;
+    }
+    temp = head;
+    if(length == n) {
+        head = head->next;
+        delete temp;
+        return;
+    }
+    for(int i = 1; i < length - n; i++) {
+        temp = temp->next;
+    }
+    Node* toDelete = temp->next;
+    temp->next = temp->next->next;
+    delete toDelete;
+}
+
+int main() {
+    Node* a = new Node(10);
+    Node* b = new Node(20);
+    Node* c = new Node(30);
+    Node* d = new Node(40);
+    Node* e = new Node(50);
+    Node* f = new Node(60);
+    a->next = b;
+    b->next = c;
+    c->next = d;
+    d->next = e;
+    e->next = f;
+    f->next = NULL;
+    display(a);
+    removeNthFromEnd(a, 3);
+    display(a);
+}
