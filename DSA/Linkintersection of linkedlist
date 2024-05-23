@@ -1,0 +1,90 @@
+//find the in tersection of two linkedlist 
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int val;
+    Node* next;
+    Node(int val){
+        this->val = val;
+        this->next = NULL;
+    }
+    Node* getIntersectionNode(Node*headA,Node*headB){
+
+        Node * tempA=headA;
+        Node* tempB=headB;
+        int lenA=0;
+        while(tempA!=NULL){
+            lenA++;
+            tempA=tempA->next;
+        }
+        int lenB=0;
+        while(tempB!=NULL){
+            lenB++;
+            tempB=tempB->next;
+        }
+        tempA=headA;     //length find karne ke baad wapis se head pe le jana padega taki compare karne ke liye fir se traverse kar sake head se
+        tempB=headB;
+        if(lenA>lenB){
+            int diff=lenA-lenB;
+            for(int i=0;i<diff;i++){
+                tempA=tempA->next;
+            }
+        }
+        else{
+            int diff=lenB-lenA;
+            for(int i=0;i<diff;i++){
+                tempB=tempB->next;
+            }
+        }
+        while(tempA!=NULL && tempB!=NULL){
+            if(tempA==tempB){
+                return tempA;
+            }
+            tempA=tempA->next;
+            tempB=tempB->next;
+        }
+        return NULL;
+
+    }
+
+};
+int main (){
+    Node* a = new Node(10);
+    Node* b = new Node(20);
+    Node* c = new Node(30);
+    Node* d = new Node(40);
+    Node* e = new Node(50);
+    Node* f = new Node(60);
+    Node* g = new Node(70);
+    Node* h = new Node(80);
+    Node* i = new Node(90);
+    Node* j = new Node(100);
+    Node* k = new Node(110);
+    Node* l = new Node(120);
+    a->next = b;
+    b->next = c;
+    c->next = d;
+    d->next = e;
+    e->next = f;
+    f->next = g;
+    g->next = h;
+    h->next = i;
+    i->next = j;
+    j->next = k;
+    k->next = l;
+    l->next = NULL;
+    Node* m = new Node(130);
+    Node* n = new Node(140);
+    Node* o = new Node(150);
+    m->next = n;
+    n->next = o;
+    o->next = i;
+    Node* intersection = a->getIntersectionNode(a, m);
+    if(intersection != NULL) {
+        cout << intersection->val;
+    } else {
+        cout << "No intersection";
+    }
+    return 0;
+}
