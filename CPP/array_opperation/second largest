@@ -33,3 +33,33 @@ int main() {
 
     return 0;
 }
+
+//optimal solution ...........
+
+int findSecondLargestElement(int arr[], int n) {
+    // Handle edge cases
+    if (n < 2) {
+        return -1; // Not enough elements to find second largest
+    }
+
+    int largest = arr[0];
+    int secondLargest = -1; // Initialize to a value that is less than any possible element
+
+    // Find the largest element
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+
+    // Handle cases where no valid second largest was found
+    if (secondLargest == -1) {
+        // Means all elements were the same or not enough distinct values
+        return -1;
+    }
+
+    return secondLargest;
+}
