@@ -1,0 +1,40 @@
+#include<iostream>
+#include<stack>         // flow first  we copy in one stack and temp and then from temp to the new stack
+using namespace std;
+void copystack(stack<int>orignalStack,stack<int> & newStack){   // paas by reference is important here
+    stack<int> tempStack;  // Temporary stack
+  while(!orignalStack.empty()){
+    tempStack.push(orignalStack.top());
+    orignalStack.pop();
+  }
+  while(!tempStack.empty()){
+    newStack.push(tempStack.top());
+    tempStack.pop();
+  }
+}
+
+void showstack(const stack<int>& st){
+    stack<int>temp = st;
+    while(!temp.empty()){
+        cout<<'\t'<<temp.top();
+        temp.pop();
+    }
+    cout << '\n';
+}
+
+int main (){
+    stack<int> st;
+    stack<int>newStack;
+    st.push(1);
+    st.push(2);
+    st.push(3);
+    st.push(4);
+   
+
+    cout<<"the elements in the stack are: ";
+    showstack(st);
+    cout<<"after copying the stack the elements in the stack are: ";
+    copystack(st,newStack);
+    showstack(newStack);
+    return 0;
+}
