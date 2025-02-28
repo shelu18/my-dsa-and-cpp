@@ -1,0 +1,59 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+
+
+void reverseTheStack(stack<int>&st){
+    if (st.empty()){
+        cout<<"stack is empty"<<endl;
+        return;
+    }
+    stack<int>temp1;
+    stack<int>temp2;
+    while(!st.empty()){
+        temp1.push(st.top());
+        st.pop();
+    }
+    while(!temp1.empty()){
+        temp2.push(temp1.top());
+        temp1.pop();
+    }
+    while(!temp2.empty()){
+        st.push(temp2.top());
+        temp2.pop();
+    }
+    // The above code is similar to the removeFromBottom.cpp code. The only difference is that we have used two temporary stacks instead of one.
+}
+void showstack(stack<int> st) {
+    stack<int> temp;
+    
+    // Transfer elements to temp to maintain the original order
+    while (!st.empty()) {
+        temp.push(st.top());
+        st.pop();
+    }
+
+    // Print the stack and restore it
+    while (!temp.empty()) {
+        cout << temp.top() << " ";
+        st.push(temp.top());  // YAHA PE KOI TISRA STACK USE KIYE BINA ST ME NHI WAPIS TEMP SE COPY KIYA HE 
+        temp.pop();
+    }
+    cout << endl;
+}
+
+int main(){
+stack<int>s;
+s.push(1);
+s.push(2);
+s.push(3);
+s.push(4);
+cout<<"Original stack: ";
+showstack(s);
+cout<<"After reversing the stack: "<<endl;
+reverseTheStack(s);
+cout<<"Modified stack: ";
+showstack(s);
+
+
+}
