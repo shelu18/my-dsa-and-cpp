@@ -1,0 +1,62 @@
+#include<iostream>
+#include<stack>
+using namespace std;
+
+
+
+void removefrombottom(stack<int>&st){
+    if(st.empty()){
+        cout<<"stack is empty"<<endl;
+        return;
+    }
+    stack<int> temp;
+    int count = 0;
+    int n = st.size();
+
+while(count<n-1){
+    temp.push(st.top());
+    st.pop();
+    count++;
+}
+st.pop();
+while(!temp.empty()){
+    st.push(temp.top());
+    temp.pop();
+}
+
+}
+void showstack(stack<int> st) {
+    stack<int> temp;
+    
+    // Transfer elements to temp to maintain the original order
+    while (!st.empty()) {
+        temp.push(st.top());
+        st.pop();
+    }
+
+    // Print the stack and restore it
+    while (!temp.empty()) {
+        cout << temp.top() << " ";
+        st.push(temp.top());  // YAHA PE KOI TISRA STACK USE KIYE BINA ST ME NHI WAPIS TEMP SE COPY KIYA HE 
+        temp.pop();
+    }
+    cout << endl;
+}
+
+
+int main() {
+    stack<int> s;
+    s.push(1);
+    s.push(2);
+    s.push(3);
+    s.push(4);
+
+    cout << "Original stack: ";
+    showstack(s); // Show the stack before modification
+
+    cout << "After removing the element from the bottom: " << endl;
+    removefrombottom(s);
+
+    cout << "Modified stack: ";
+    showstack(s); // Show the updated stack
+}
