@@ -1,0 +1,42 @@
+#include<iostream>
+#include<stack>
+#include<vector>
+using namespace std;
+
+vector<int> nge(vector<int>& arr) {  // Function to compute Next Greater Elements
+    int n = arr.size();
+    vector<int> output(n, -1);  // Initialize result vector with -1
+    stack<int> st;  // Stack to store indices of elements
+    st.push(0);  // Push first index (0) into stack
+
+    for (int i = 1; i < n; i++) {  // Loop through the array
+        while (!st.empty() && arr[i] > arr[st.top()]) {  // If current element is greater
+            output[st.top()] = arr[i];  // Update NGE for top index
+            st.pop();  // Remove the processed index
+        }
+        st.push(i);  // Push current index into stack
+    }
+
+    return output;  // Return the result array
+}
+
+int main() {
+    int n;
+    cout << "Enter the size: ";
+    cin >> n;
+
+    vector<int> v;
+    while (n--) {  // Read input elements
+        int x;
+        cin >> x;
+        v.push_back(x);
+    }
+
+    vector<int> res = nge(v);  // Call the NGE function
+
+    for (int i = 0; i < res.size(); i++) {
+        cout << res[i] << " ";  // Print the output
+    }
+
+    return 0;
+}
