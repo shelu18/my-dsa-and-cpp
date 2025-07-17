@@ -1,0 +1,19 @@
+#include<iostream>
+using namespace std; 
+int print1ton(int n){
+    // Base case: if n is 0, return
+    if (n == 0) {
+        return 0;
+    }
+    // Recursive case: print numbers from 1 to n-1
+    print1ton(n - 1);
+    cout << n << " ";
+    return 0;
+}
+int main (){
+    int n;
+    cout << "Enter a positive integer: ";
+    cin >> n;
+    print1ton(n);
+    return 0;
+}
